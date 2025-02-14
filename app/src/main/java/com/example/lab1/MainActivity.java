@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle autState){ //сохраняем
         super.onSaveInstanceState(autState);
-        autState.putInt("Klic", count);
+        autState.putInt("Puk", count);
         Log.d("Instance", "onSave");
         Toast.makeText(this, "onSave", Toast.LENGTH_LONG).show();
     }
@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle SavedState){ //восстанавливаем
         super.onRestoreInstanceState(SavedState);
-        if(SavedState !=  null && SavedState.containsKey("Klic")){
-            count = SavedState.getInt("Klic");
+        if(SavedState !=  null && SavedState.containsKey("Puk")){
+            count = SavedState.getInt("Puk");
         }
         Log.d("Instance", "get");
         Toast.makeText(this, "get", Toast.LENGTH_LONG).show();
