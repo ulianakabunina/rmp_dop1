@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private Integer count = 0;
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         Toast.makeText(this, "onCreate", Toast.LENGTH_LONG).show();
+        textView = findViewById(R.id.txtCounter);
+        textView.setText(count.toString());
+
+        if (savedInstanceState != null) {
+            count = savedInstanceState.getInt("Puk", 0); // Восстанавливаем значение count
+            textView.setText(count.toString()); // Обновляем TextView
+        }
 
     }
 
